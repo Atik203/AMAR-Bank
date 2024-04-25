@@ -107,7 +107,6 @@ DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
         default='postgres://amar_bank_db_user:J9wcqm33fyFkaQsyNLcTEp66SwsPw55C@dpg-col7c3q1hbls73b4r2mg-a.oregon-postgres.render.com/amar_bank_db',
-        conn_max_age=600
     )
 }
 

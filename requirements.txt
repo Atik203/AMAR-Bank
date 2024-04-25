@@ -6,6 +6,7 @@ crispy-bootstrap5
 crispy-tailwind
 cssbeautifier
 distlib
+dj-database-url
 Django
 django-crispy-forms
 django-environ
@@ -21,11 +22,13 @@ pillow
 pipenv
 platformdirs
 psycopg2
+psycopg2-binary
 PyYAML
 regex
 setuptools
 six
 sqlparse
 tqdm
+typing_extensions
 tzdata
 virtualenv

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 
+import dj_database_url
 import environ
 
 env = environ.Env()
@@ -91,15 +92,23 @@ WSGI_APPLICATION = 'amar_bank.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': env('DB_NAME'),
+#        'USER': env('DB_USER'),
+#        'PASSWORD': env('DB_PASSWORD'),
+#        'HOST': env('DB_HOST'),
+#        'PORT': env('DB_PORT'),
+#    }
+# }
+
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       'NAME': env('DB_NAME'),
-       'USER': env('DB_USER'),
-       'PASSWORD': env('DB_PASSWORD'),
-       'HOST': env('DB_HOST'),
-       'PORT': env('DB_PORT'),
-   }
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgres://amar_bank_db_user:J9wcqm33fyFkaQsyNLcTEp66SwsPw55C@dpg-col7c3q1hbls73b4r2mg-a.oregon-postgres.render.com/amar_bank_db',
+        conn_max_age=600
+    )
 }
 
 # Password validation

@@ -1,0 +1,163 @@
+{% extends 'base.html' %} {% load static %} {% block head_title %}Banking
+System{% endblock %} {% block content %}
+<div class="bg-white px-3 py-4 rounded-xl my-6">
+  <h1 class="font-bold text-3xl text-center pb-5">Sign In</h1>
+  <div class="w-full mt-10">
+    <form method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      {% csrf_token %} {% for hidden_field in form.hidden_fields %} {{
+      hidden_field.errors }} {{ hidden_field }} {% endfor %}
+
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="{{ form.first_name.id_for_label }}"
+          >
+            {{ form.username.label }}
+          </label>
+          {{ form.username }}
+        </div>
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="{{ form.state.id_for_label }}"
+          >
+            {{ form.state.label }}
+          </label>
+          {{ form.state}}
+        </div>
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="{{ form.first_name.id_for_label }}"
+          >
+            {{ form.first_name.label }}
+          </label>
+          {{ form.first_name }}
+        </div>
+        <div class="w-full md:w-1/2 px-3">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="{{ form.last_name.id_for_label }}"
+          >
+            {{ form.last_name.label }}
+          </label>
+          {{ form.last_name }}
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="{{ form.email.id_for_label }}"
+          >
+            {{ form.email.label }}
+          </label>
+          {{ form.email }}
+        </div>
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="{{ form.account_type.id_for_label }}"
+          >
+            {{ form.account_type.label }}
+          </label>
+          {{ form.account_type }}
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="{{ form.gender.id_for_label }}"
+          >
+            {{ form.gender.label }}
+          </label>
+          {{ form.gender }}
+        </div>
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="{{ form.birthday.id_for_label }}"
+          >
+            {{ form.birthday.label }}
+          </label>
+          {{ form.birthday }}
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="{{ form.password1.id_for_label }}"
+          >
+            {{ form.password1.label }}
+          </label>
+          {{ form.password1 }}
+        </div>
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="{{ form.password2.id_for_label }}"
+          >
+            {{ form.password2.label }}
+          </label>
+          {{ form.password2 }}
+        </div>
+      </div>
+
+      {% for hidden_field in form.hidden_fields %} {{ hidden_field.errors }} {{
+      hidden_field }} {% endfor %}
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="{{ form.address.id_for_label }}"
+          >
+            {{ form.address.label }}
+          </label>
+          {{ form.address }}
+        </div>
+        <div class="w-full md:w-1/2 px-3">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="{{ form.city.id_for_label }}"
+          >
+            {{ form.city.label }}
+          </label>
+          {{ form.city }}
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="{{ form.zip_code.id_for_label }}"
+          >
+            {{ form.zip_code.label }}
+          </label>
+          {{ form.zip_code }}
+        </div>
+        <div class="w-full md:w-1/2 px-3">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="{{ form.country.id_for_label }}"
+          >
+            {{ form.country.label }}
+          </label>
+          {{ form.country }}
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between">
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit"
+        >
+          Register
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

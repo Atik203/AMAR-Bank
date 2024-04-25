@@ -1,0 +1,29 @@
+<div style="margin: auto;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            border-radius: 5px;
+            padding: 20px">
+  <div style="margin-bottom: 20px;">
+    <h2 style="font-weight: bold; font-size: 20px;">AMAR Bank</h2>
+  </div>
+  <div style="margin-bottom: 20px;">
+    <h3 style="font-weight: bold; font-size: 18px; margin-bottom: 10px;">
+      Dear {{ user.first_name }} {{ user.last_name }},
+    </h3>
+    <p style="margin-bottom: 10px;">
+      We are writing to confirm that your deposit request for ${{ amount }} has been successfully completed.
+    </p>
+    <p style="margin-bottom: 10px;">Your new account balance is ${{ user.account.balance }}.</p>
+    <p style="margin-bottom: 10px;">
+      If you have any questions or need further assistance, please do not hesitate to contact us.
+    </p>
+    <p style="margin-bottom: 10px;">Thank you for choosing AMAR Bank.</p>
+    <p style="margin-bottom: 10px;">Best Regards,</p>
+    <p style="margin-bottom: 10px;">AMAR Bank Customer Service</p>
+  </div>
+  <div style="margin-top: 20px;
+              border-top: 1px solid #ddd;
+              padding-top: 20px">
+    <p style="font-size: 14px; color: #777;">This is an automated message, please do not reply directly to this email.</p>
+  </div>
+</div>

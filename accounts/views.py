@@ -25,7 +25,7 @@ def send_confirm_email(user,subject,template_name):
     send_email.content_subtype = 'html'
     send_email.send()
 
-# Create your views here.
+
 class UserRegistrationView(FormView):
     template_name = 'register.html'
     form_class = RegistrationForm
